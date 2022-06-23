@@ -40,7 +40,7 @@ padding: 120px;
     opacity: .5;
 }
 .todo-list{
-    margin-left: 8% ;
+    margin-left: 4% ;
 
 }
 .todo-item{
@@ -104,3 +104,6 @@ padding: 120px;
     transition-delay: 0.4s;
     transform: translateY(0);
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

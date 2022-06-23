@@ -1,4 +1,5 @@
-<div class="todo-item compeleted" [class.compeleted]="todo.completed">
+<div class="todo-item compeleted" [class.compeleted]="todo.completed"
+(click)="onTodoCLicked()">
     <div class="check-box">
         <img class="show" src="assets//check-solid.svg" width="18px"
         height="18px" alt="" srcset="">
@@ -6,8 +7,8 @@
     <div class="todo-text">
        {{ todo.text }}
     </div>
-    <div class="todo-controls-box">
-        <div class="todo-control-button">
+    <div class="todo-controls-box" (click)="$event.stopPropagation()">
+        <div class="todo-control-button" (click)="onEditeClicked()">
           <img src="assets//pen-solid.svg"width="18px"
           height="18px" alt="" srcset="">
         </div>

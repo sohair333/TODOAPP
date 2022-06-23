@@ -30,24 +30,26 @@
         </div>
       </div>
 
-     <div *ngIf="todolistField.invalid && showValidationErrors">
-      <div class="text-danger" *ngIf="todolistField.errors?.['required']" >
-        Please Enter Text To Your List!
+      <div *ngIf="todolistField.invalid && showValidationErrors">
+        <div class="text-danger" *ngIf="todolistField.errors?.['required']">
+          Please Enter Text To Your List!
+        </div>
+        <div class="text-danger" *ngIf="todolistField.errors?.['minlength']">
+          task Must be at Least 2 Chararcters!
+        </div>
       </div>
-      <div class="text-danger" *ngIf="todolistField.errors?.['minlength']">
-        task Must be at Least 2 Chararcters!
-      </div>
-     </div>
-
     </form>
   </div>
 </div>
 <div class="section">
   <div class="container">
     <div class="todo-list">
-    
-    <app-todo-item *ngFor="let todo of todoArrayOfData " [todo]="todo"></app-todo-item>
-      
+      <app-todo-item
+        *ngFor="let todo of todoArrayOfData"
+        [todo]="todo"
+        (todoCLicked)="ontodoClicked(todo)"
+        (editeClicked)="onEdidteClicked(todo)"
+      ></app-todo-item>
     </div>
   </div>
 </div>

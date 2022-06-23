@@ -26,4 +26,11 @@ export class TodoComponent implements OnInit {
     form.reset();
     return 1;
   }
+  ontodoClicked(todo:Todo){
+    todo.completed = !todo.completed;  
+  }
+  onEdidteClicked(todo:Todo){
+    const indx = this.todoArrayOfData.indexOf(todo);
+    // this.dataService.updatTodo();
+  }
 }
