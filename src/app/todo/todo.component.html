@@ -1,0 +1,53 @@
+<section class="heading-section">
+  <h1 class="text-center title">ToDo App</h1>
+</section>
+<div class="container">
+  <div class="todo-section-form">
+    <form #form="ngForm" (ngSubmit)="onformSubmit(form)">
+      <h4>New ToDo</h4>
+      <div class="field">
+        <div class="control">
+          <input
+            ngModel
+            #todolistField="ngModel"
+            required
+            name="text"
+            type="text"
+            minlength="3"
+            class="input-field"
+            style="width: 500px; padding: 4px; border-radius: 5px"
+            placeholder="Enter Your Text Here ... "
+          />
+          <div class="add-btn" style="display: inline; margin-left: 15px">
+            <button type="submit" class="btn btn-info">
+              <img
+                src="assets//plus-solid.svg"
+                width="18px"
+                height="18px"
+              />&nbsp;Added Task
+            </button>
+          </div>
+        </div>
+      </div>
+
+     <div *ngIf="todolistField.invalid && showValidationErrors">
+      <div class="text-danger" *ngIf="todolistField.errors?.['required']" >
+        Please Enter Text To Your List!
+      </div>
+      <div class="text-danger" *ngIf="todolistField.errors?.['minlength']">
+        task Must be at Least 2 Chararcters!
+      </div>
+     </div>
+
+    </form>
+  </div>
+</div>
+<div class="section">
+  <div class="container">
+    <div class="todo-list">
+    
+    <app-todo-item *ngFor="let todo of todoArrayOfData " [todo]="todo"></app-todo-item>
+      
+    </div>
+  </div>
+</div>
