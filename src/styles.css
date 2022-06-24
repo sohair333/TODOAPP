@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap';
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-
+@import 'tippy.js/dist/tippy.css';
 .heading-section{
 background: blue;
 padding: 120px;

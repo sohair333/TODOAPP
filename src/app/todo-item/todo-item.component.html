@@ -1,21 +1,42 @@
-<div class="todo-item compeleted" [class.compeleted]="todo.completed"
-(click)="onTodoCLicked()">
-    <div class="check-box">
-        <img class="show" src="assets//check-solid.svg" width="18px"
-        height="18px" alt="" srcset="">
-    </div>
-    <div class="todo-text">
-       {{ todo.text }}
-    </div>
-    <div class="todo-controls-box" (click)="$event.stopPropagation()">
-        <div class="todo-control-button" (click)="onEditeClicked()">
-          <img src="assets//pen-solid.svg"width="18px"
-          height="18px" alt="" srcset="">
-        </div>
-        <div class="todo-control-button" (click)="onDeleteCLicked()">
-          <img src="assets//trash-can-solid.svg" width="18px"
-          height="18px" alt="" srcset="">
-        </div>
-    </div>
-
+<div
+  class="todo-item compeleted"
+  [class.compeleted]="todo.completed"
+  (click)="onTodoCLicked()"
+>
+  <div class="check-box">
+    <img
+      class="show"
+      src="assets//check-solid.svg"
+      width="18px"
+      height="18px"
+      alt=""
+      srcset=""
+    />
   </div>
+  <div class="todo-text">
+    {{ todo.text }}
+  </div>
+  <div class="todo-controls-box" (click)="$event.stopPropagation()">
+    <div class="todo-control-button" (click)="onEditeClicked()" appToolTip="Edite task"
+    
+    >
+      <img
+        src="assets//pen-solid.svg"
+        width="18px"
+        height="18px"
+        alt=""
+        srcset=""
+      />
+    </div>
+    <div class="todo-control-button" (click)="onDeleteCLicked()"
+    appToolTip="Delete Task">
+      <img
+        src="assets//trash-can-solid.svg"
+        width="18px"
+        height="18px"
+        alt=""
+        srcset=""
+      />
+    </div>
+  </div>
+</div>

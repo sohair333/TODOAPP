@@ -8,12 +8,15 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
 import { EditeTaskComponent } from './edite-task/edite-task.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToolTipDirective } from './shared/tool-tip.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
     TodoItemComponent,
-    EditeTaskComponent
+    EditeTaskComponent,
+    ToolTipDirective
     
   ],
   imports: [
