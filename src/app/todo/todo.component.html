@@ -1,7 +1,7 @@
 <section class="heading-section">
   <h1 class="text-center title">ToDo App</h1>
 </section>
-<div class="container">
+<div class="container add-todo-conatiner">
   <div class="todo-section-form">
     <form #form="ngForm" (ngSubmit)="onformSubmit(form)">
       <h4>New ToDo</h4>
@@ -49,6 +49,7 @@
         [todo]="todo"
         (todoCLicked)="ontodoClicked(todo)"
         (editeClicked)="onEdidteClicked(todo)"
+        (deleteCLicked)="onDeleteClicked(todo)"
       ></app-todo-item>
     </div>
   </div>

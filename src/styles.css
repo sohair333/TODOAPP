@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap';
-
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 .heading-section{
 background: blue;
@@ -104,6 +104,10 @@ padding: 120px;
     transition-delay: 0.4s;
     transform: translateY(0);
 }
-
+.add-todo-conatiner{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

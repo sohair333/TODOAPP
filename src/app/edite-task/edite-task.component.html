@@ -1,19 +1,53 @@
+<h3 class="mx-4">Edite Todo</h3>
 <div mat-dialog-content>
-    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
-        <div class="field">
-            <div class="control">
-                <input type="text" name="" class="input" placeholder="Enter Your Task Here ..." id="">
-            </div>
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+    <div class="field">
+      <div class="control">
+        <input
+          type="text"
+          name="text"
+          [ngModel]="todo.text"
+          style="
+            border-radius: 2px;
+            margin-left: 20px;
+            width: 400px;
+            padding: 5px;
+            outline: none;
+            text-indent: 5px;
+          "
+          #todolistField="ngModel"
+          required
+          minlength="3"
+          placeholder="Enter Your Edited Task Here..."
+          id=""
+        />
+      </div>
+      <div *ngIf="todolistField.invalid ">
+        <div class="text-danger" *ngIf="todolistField.errors?.['required']">
+          Please Enter Text To Your List!
         </div>
-        <br>
-        <div class="field">
-            <div class="control">
-                <button  type="button"class="button">Cancel</button>
-            </div>
-            <div class="control">
-                <button type="submit" class="button">Save</button>
-            </div>
+        <div class="text-danger" *ngIf="todolistField.errors?.['minlength']">
+          task Must be at Least 2 Chararcters!
         </div>
-
-    </form>
+      </div>
+    </div>
+    <br />
+    <div class="field" style="display: flex; float: right">
+      <div class="control" style="margin: 5px">
+        <button
+          type="button"
+          class="button"
+          (click)="close()"
+          class="btn btn-danger"
+        >
+          Cancel
+        </button>
+      </div>
+      <div class="control" style="margin: 5px">
+        <button type="submit" class="button" class="btn btn-danger">
+          Save
+        </button>
+      </div>
+    </div>
+  </form>
 </div>
